@@ -1,0 +1,130 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Strapi",
+      "version": "1.0.0",
+      "contact": {}
+    },
+    "servers": [
+      {
+        "url": "http://localhost:1337"
+      }
+    ],
+    "paths": {
+      "/api/todos/": {
+        "get": {
+          "summary": "get all to-do",
+          "description": "get all to-do",
+          "operationId": "getAllToDo",
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          }
+        }
+      },
+      "/api/todos/1": {
+        "get": {
+          "summary": "get a particular to-do",
+          "description": "get a particular to-do",
+          "operationId": "getAParticularToDo",
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          }
+        },
+        "put": {
+          "summary": "edit a to-do",
+          "description": "edit a to-do",
+          "operationId": "editAToDo",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "item": {
+                          "type": "string",
+                          "example": "updated to-do #1 from postman"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "edit a to-do": {
+                    "value": {
+                      "data": {
+                        "item": "updated to-do #1 from postman"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          }
+        },
+        "delete": {
+          "summary": "delete a to-do",
+          "description": "delete a to-do",
+          "operationId": "deleteAToDo",
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          }
+        }
+      },
+      "/api/todos": {
+        "post": {
+          "summary": "post a to-do",
+          "description": "post a to-do",
+          "operationId": "postAToDo",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "item": {
+                          "type": "string",
+                          "example": "todo #5 from postman"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "post a to-do": {
+                    "value": {
+                      "data": {
+                        "item": "todo #5 from postman"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": ""
+            }
+          }
+        }
+      }
+    },
+    "tags": []
+  }
